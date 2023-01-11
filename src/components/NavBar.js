@@ -1,15 +1,16 @@
 import React from 'react';
 
 function NavBar(props) {
-  const links = ['home', 'about', 'contact'];
+  const links = ['home', 'about', 'projects'];
 
+  const item = links.map((link, index) => {
+    return (<a href={`#${link}`} key={index}>
+      {link}
+    </a>
+  )})
   return (
     <nav>
-      {links.map((link, index) => (
-        <a href={`#${link}`} key={`link-${index}`}>
-          {link}
-        </a>
-      ))}
+      {item}
     </nav>
   );
 }
